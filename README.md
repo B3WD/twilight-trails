@@ -12,6 +12,6 @@ How to use repo:
 
 1. Unity Version: `2022.3.14f1`
 2. Download and insall: https://git-lfs.com/
-3. `git clone git@github.com:B3WD/twilight-trails.git`
+3. `git clone https://github.com/B3WD/twilight-trails.git`
 4. `git lfs install`
 5. Have fun! 🎉(●'◡'●)🎉
