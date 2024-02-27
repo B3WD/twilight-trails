@@ -77,6 +77,10 @@ public class PlayerController : MonoBehaviour
         Debug.Log("JUMPED!");
     }
 
+    private void OnSprint(){
+        Debug.Log("SPRINTED!");
+    }
+
     private void OnMove(InputValue inputValue)
     {
         input = inputValue.Get<Vector2>();
@@ -87,4 +91,6 @@ public class PlayerController : MonoBehaviour
     {
         lookDirection = inputValue.Get<Vector2>();
     }
+
+    
 }
