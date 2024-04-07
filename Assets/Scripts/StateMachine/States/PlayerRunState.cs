@@ -1,31 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerGroundedState : PlayerBaseState
+public class PlayerRunState : APlayerBaseState
 {
-    public PlayerGroundedState(
+    public PlayerRunState(
         PlayerStateMachine currentContext, 
         PlayerStateFactory playerStateFactory)
         : base(currentContext, playerStateFactory){}
 
     public override void EnterState(){
-        Debug.Log("Enter grounded state!");
+        Debug.Log("Entered run state!");
+        _ctx.Velocity = _ctx.MoveDirection * _ctx.ForwardSpeed * _ctx.SprintMultiplier;
     }
-
+    
     public override void UpdateState(){
         CheckSwitchStates();
     }
-
+    
     public override void ExitState(){
-        Debug.Log("Exit grounded state!");
+        Debug.Log("Exited run state!");
     }
-
+    
     public override void InitializeSubState(){}
-
+    
     public override void CheckSwitchStates(){
-        if (_ctx.IsJumpPressed){
-            SwitchState(_factory.Jump());
+        if(!_ctx.IsRunPressed){
+            SwitchState(_stateFactory.Walk());
         }
     }
 }

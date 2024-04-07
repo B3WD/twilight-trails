@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerFallState : PlayerBaseState
+public class PlayerFallState : APlayerBaseState
 {
     public PlayerFallState(
         PlayerStateMachine currentContext, 
